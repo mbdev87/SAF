@@ -17,7 +17,7 @@ namespace SAF
         public SAFArchive(Stream baseSteam, SAFMode mode, string basePath, bool calculateChecksums = true)
             : base(baseSteam, mode, SAF_ARCHIVE_HEADER_STRING)
         {
-            this.basePath = Path.GetFullPath(basePath).Trim(Path.DirectorySeparatorChar);
+            this.basePath = Path.GetFullPath(basePath).TrimEnd(Path.DirectorySeparatorChar);
             this.basePathLength = this.basePath.Length;
             this.calculateChecksums = calculateChecksums;
         }
